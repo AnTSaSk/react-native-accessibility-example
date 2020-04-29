@@ -1,18 +1,28 @@
 import React, { FunctionComponent } from 'react';
-import { Text } from 'react-native';
+
+// Context
+import { useTheme } from '../../hooks/theme';
 
 // Types
 import { TitleProps } from './types.d';
 
-const Title: FunctionComponent<TitleProps> = ({ label }) => (
-  <Text
-    // style={[styles.sectionTitle, { color: themeColors.colors.title }]}
-    accessible
-    accessibilityLabel={label}
-    accessibilityRole="text"
-  >
-    {label}
-  </Text>
-);
+// Style
+import { TitleComponent } from './style';
+
+const Title: FunctionComponent<TitleProps> = (props) => {
+  const { theme } = useTheme();
+
+  return (
+    <TitleComponent
+      isDark={theme === 'dark'}
+      accessible
+      accessibilityLabel={props.label}
+      accessibilityRole="text"
+      {...props}
+    >
+      {props.label}
+    </TitleComponent>
+  );
+};
 
 export default Title;

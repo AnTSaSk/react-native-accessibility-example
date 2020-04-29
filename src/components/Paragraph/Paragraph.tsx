@@ -1,17 +1,27 @@
-import React, { FunctionComponent } from 'react';
-import { Text } from 'react-native';
+import React, { StatelessComponent } from 'react';
+
+// Context
+import { useTheme } from '../../hooks/theme';
 
 // Types
-import { ParagraphProps } from './types.d';
+import { ParagraphProps } from './types';
 
-const Paragraph: FunctionComponent<ParagraphProps> = ({ children }) => (
-  <Text
-    // style={[styles.sectionParagraph, { color: themeColors.colors.Paragraph }]}
-    accessible
-    accessibilityRole="text"
-  >
-    {children}
-  </Text>
-);
+// Styles
+import { ParagraphComponent } from './style';
+
+const Paragraph: StatelessComponent<ParagraphProps> = (props) => {
+  const { theme } = useTheme();
+
+  return (
+    <ParagraphComponent
+      isDark={theme === 'dark'}
+      accessible
+      accessibilityRole="text"
+      {...props}
+    >
+      {props.children}
+    </ParagraphComponent>
+  );
+};
 
 export default Paragraph;
