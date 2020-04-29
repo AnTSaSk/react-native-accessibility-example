@@ -1,6 +1,6 @@
 {
   "plugins": ["stylelint-order"],
-  "extends": ["stylelint-config-react-native-css-modules", "stylelint-config-prettier"],
+  "extends": ["stylelint-config-prettier"],
   "rules": {
     "order/order": [
       "custom-properties",

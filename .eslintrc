@@ -8,7 +8,7 @@
   "plugins": [
     "@react-native-community",
     "@typescript-eslint",
-    "css-modules",
+    "jsx-a11y",
     "react",
     "react-hooks"
   ],
@@ -16,7 +16,7 @@
     "@react-native-community",
     "airbnb",
     "airbnb/hooks",
-    "plugin:css-modules/recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
     "prettier/react"
   ],
@@ -60,7 +60,6 @@
       "rules": {
         "react/prop-types": "off",
         "@typescript-eslint/no-array-constructor": "error",
-        "@typescript-eslint/no-empty-interface": "error",
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-extraneous-class": "error",
         "@typescript-eslint/no-inferrable-types": "error",
