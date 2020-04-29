@@ -3,6 +3,7 @@ import { AppearanceProvider } from 'react-native-appearance';
 
 // Context
 import { AccessibilityProvider } from './src/hooks/accessibility';
+import { ThemeProvider } from './src/hooks/theme';
 
 // Navigation
 import Navigation from './src';
@@ -11,7 +12,9 @@ const App = () => {
   return (
     <AppearanceProvider>
       <AccessibilityProvider>
-        <Navigation />
+        <ThemeProvider>
+          <Navigation />
+        </ThemeProvider>
       </AccessibilityProvider>
     </AppearanceProvider>
   );

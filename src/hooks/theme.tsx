@@ -1,47 +1,86 @@
-import { DefaultTheme, DarkTheme } from '@react-navigation/native';
+import React, {
+  createContext,
+  FunctionComponent,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { Appearance } from 'react-native-appearance';
+import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 
-export const appDefaultTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
+import { lightColors, darkColors } from './variables';
 
-    black: '#000000',
-    lightBlack: '#616161',
-    grey: '#9E9E9E',
-    altGrey: '#E0E0E0',
-    lightGrey: '#EEEEEE',
-    white: '#FFFFFF',
-    deepBlue: '#2A2660',
-    darkBlue: '#312C83',
-    green: '#00DE97',
+// Types
+import { themeValue, themeContextProps, themeStyleProps } from './types.d';
 
-    primary: '#2A2660',
-    secondary: '#312C83',
+export const ThemeContext = createContext<themeContextProps>({
+  loading: true,
+  theme: 'light',
+  changeLoading: () => {},
+  changeTheme: () => {},
+});
 
-    title: '#616161',
-    text: '#9E9E9E',
-  },
+export const ThemeProvider: FunctionComponent<{
+  children: ReactNode;
+}> = ({ children }) => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [theme, setTheme] = useState<themeValue>('light');
+  const [themeStyle, setThemeStyle] = useState<themeStyleProps>({
+    colors: lightColors,
+  });
+
+  const changeLoading = (value: boolean) => {
+    setLoading(value);
+  };
+
+  const changeTheme = (value: themeValue) => {
+    setTheme(value);
+
+    if (value === 'light') {
+      setThemeStyle({
+        colors: lightColors,
+      });
+    } else {
+      setThemeStyle({
+        colors: darkColors,
+      });
+    }
+  };
+
+  return (
+    <ThemeContext.Provider
+      value={{
+        loading,
+        theme,
+        changeLoading,
+        changeTheme,
+      }}
+    >
+      <EmotionThemeProvider theme={themeStyle}>{children}</EmotionThemeProvider>
+    </ThemeContext.Provider>
+  );
 };
 
-export const appContrastTheme = {
-  ...DarkTheme,
-  colors: {
-    ...DarkTheme.colors,
+export const useTheme = () => {
+  const { loading, theme, changeLoading, changeTheme } = useContext(
+    ThemeContext,
+  );
 
-    black: '#000000',
-    lightBlack: '#616161',
-    grey: '#9E9E9E',
-    altGrey: '#E0E0E0',
-    lightGrey: '#EEEEEE',
-    white: '#FFFFFF',
-    deepBlue: '#2A2660',
-    darkBlue: '#312C83',
-    green: '#00DE97',
+  useEffect(() => {
+    if (loading) {
+      const colorScheme = Appearance.getColorScheme();
 
-    primary: '#312C83',
-    secondary: '#00DE97',
+      if (colorScheme !== 'no-preference') {
+        changeTheme(colorScheme);
+      }
 
-    title: '#FFFFFF',
-    text: '#E0E0E0',
-  },
+      changeLoading(false);
+    }
+  }, [loading, changeLoading, changeTheme]);
+
+  return {
+    theme,
+    changeTheme,
+  };
 };

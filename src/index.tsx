@@ -1,25 +1,29 @@
 import React, { FunctionComponent } from 'react';
 import { StatusBar } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 // Context
-import { useAccessibility } from './hooks/accessibility';
-import { appDefaultTheme, appContrastTheme } from './hooks/theme';
+import { useTheme } from './hooks/theme';
+import { lightColors, darkColors } from './hooks/variables';
 
 // Drawer
-import CustomDrawer from './navigation/Drawer';
+import CustomDrawer from './navigation/drawer';
 
 // Screens
-import Home from './routes/Home';
+import Home from './routes/home';
 
 const Drawer = createDrawerNavigator();
 
 const Navigation: FunctionComponent = () => {
-  const { theme } = useAccessibility();
+  const { theme } = useTheme();
 
-  const statusBarStyle = theme === 'default' ? 'dark-content' : 'light-content';
-  const themeColors = theme === 'default' ? appDefaultTheme : appContrastTheme;
+  const statusBarStyle = theme === 'light' ? 'dark-content' : 'light-content';
+  const themeColors = {
+    ...DefaultTheme,
+    dark: theme === 'dark',
+    colors: theme === 'light' ? lightColors : darkColors,
+  };
 
   return (
     <>

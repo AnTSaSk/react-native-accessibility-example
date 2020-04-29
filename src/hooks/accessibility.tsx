@@ -6,40 +6,36 @@ import React, {
   useState,
 } from 'react';
 
-import {
-  accessibilitySize,
-  accessibilityTheme,
-  accessibilityContextProps,
-} from './types.d';
+import { accessibilitySize, accessibilityContextProps } from './types.d';
 
 export const AccessibilityContext = createContext<accessibilityContextProps>({
   size: 'default',
-  theme: 'default',
+  contrast: false,
   changeSize: () => {},
-  changeTheme: () => {},
+  changeContrast: () => {},
 });
 
 export const AccessibilityProvider: FunctionComponent<{
   children: ReactNode;
 }> = ({ children }) => {
   const [size, setSize] = useState<accessibilitySize>('default');
-  const [theme, setTheme] = useState<accessibilityTheme>('default');
+  const [contrast, setContrast] = useState<boolean>(false);
 
   const changeSize = (value: accessibilitySize) => {
     setSize(value);
   };
 
-  const changeTheme = (value: accessibilityTheme) => {
-    setTheme(value);
+  const changeContrast = (value: boolean) => {
+    setContrast(value);
   };
 
   return (
     <AccessibilityContext.Provider
       value={{
         size,
-        theme,
+        contrast,
         changeSize,
-        changeTheme,
+        changeContrast,
       }}
     >
       {children}
@@ -48,14 +44,14 @@ export const AccessibilityProvider: FunctionComponent<{
 };
 
 export const useAccessibility = () => {
-  const { size, theme, changeSize, changeTheme } = useContext(
+  const { size, contrast, changeSize, changeContrast } = useContext(
     AccessibilityContext,
   );
 
   return {
     size,
-    theme,
+    contrast,
     changeSize,
-    changeTheme,
+    changeContrast,
   };
 };
