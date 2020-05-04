@@ -1,5 +1,9 @@
 import styled from '@emotion/native';
 
+// Types
+import { ParagraphProps } from '../components/Paragraph/types.d';
+import { ThemeViewProps } from './types.d';
+
 // Components
 import Paragraph from '../components/Paragraph';
 
@@ -24,13 +28,13 @@ export const ThemeTouchable = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const ThemeParagraph = styled.Text`
+export const ThemeParagraph = styled.Text<ParagraphProps>`
   color: ${(props) =>
     props.isDark ? props.theme.colors.white : props.theme.colors.black};
   font-size: 16px;
 `;
 
-export const ThemeIcon = styled.View`
+export const ThemeIcon = styled.View<ThemeViewProps>`
   width: 30px;
   height: 30px;
   border: 1px solid ${(props) => props.theme.colors.grey};
