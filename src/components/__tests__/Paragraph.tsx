@@ -3,15 +3,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 // Mocked context
-import ThemeWrapper from '../../__mocks__/ThemeWrapper';
+import ContextWrapper from '../../__mocks__/ContextWrapper';
 
 // Component
 import Paragraph from '../Paragraph';
 
 const TestComponent = (
-  <ThemeWrapper>
+  <ContextWrapper>
     <Paragraph>Test content</Paragraph>
-  </ThemeWrapper>
+  </ContextWrapper>
 );
 
 it('Renders correctly Paragraph component', () => {

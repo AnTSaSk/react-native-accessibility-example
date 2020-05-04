@@ -1,23 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders correctly Title component 1`] = `
-<Text
-  accessibilityLabel="Test content"
-  accessibilityRole="text"
-  accessible={true}
-  isDark={false}
-  label="Test content"
+<View
   style={
     Object {
-      "color": "#A9A9A9",
-      "fontSize": 26,
-      "marginBottom": 15,
-      "marginLeft": 0,
-      "marginRight": 0,
-      "marginTop": 0,
+      "flex": 1,
     }
   }
 >
-  Test content
-</Text>
+  <Text
+    accessibilityLabel="Test content"
+    accessibilityRole="text"
+    accessible={true}
+    isDark={false}
+    label="Test content"
+    style={
+      Object {
+        "color": "#A9A9A9",
+        "fontSize": 26,
+        "marginBottom": 15,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "marginTop": 0,
+      }
+    }
+  >
+    Test content
+  </Text>
+</View>
 `;

@@ -3,15 +3,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 // Mocked context
-import ThemeWrapper from '../../__mocks__/ThemeWrapper';
+import ContextWrapper from '../../__mocks__/ContextWrapper';
 
 // Component
 import Title from '../Title';
 
 const TestComponent = (
-  <ThemeWrapper>
+  <ContextWrapper>
     <Title label="Test content" />
-  </ThemeWrapper>
+  </ContextWrapper>
 );
 
 it('Renders correctly Title component', () => {
