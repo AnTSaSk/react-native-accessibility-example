@@ -1,6 +1,8 @@
 import styled from '@emotion/native';
 
-export const TitleComponent = styled.Text`
+import { TitleProps } from './types';
+
+export const TitleComponent = styled.Text<TitleProps>`
   margin: 0 0 15px;
   color: ${(props) =>
     props.isDark ? props.theme.colors.white : props.theme.colors.grey};
