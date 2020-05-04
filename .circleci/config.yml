@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build:
+  build-tests-coverage:
     executor:
       name: node/default
     steps:
@@ -10,16 +10,9 @@ jobs:
       - node/with-cache:
           steps:
             - run: yarn
-  tests:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
             - run: yarn test
+            - run: bash <(curl -s https://codecov.io/bash)
 workflows:
-  build:
+  build-tests-coverage:
     jobs:
-      - build
-      - tests
+      - build-tests-coverage
