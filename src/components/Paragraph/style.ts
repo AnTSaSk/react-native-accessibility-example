@@ -1,6 +1,8 @@
 import styled from '@emotion/native';
 
-export const ParagraphComponent = styled.Text`
+import { ParagraphProps } from './types';
+
+export const ParagraphComponent = styled.Text<ParagraphProps>`
   margin: 5px 0;
   color: ${(props) =>
     props.isDark ? props.theme.colors.white : props.theme.colors.black};

@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 
 // Context
 import { useTheme } from '../../hooks/theme';
@@ -9,7 +9,7 @@ import { ParagraphProps } from './types';
 // Styles
 import { ParagraphComponent } from './style';
 
-const Paragraph: StatelessComponent<ParagraphProps> = (props) => {
+const Paragraph: FunctionComponent<ParagraphProps> = (props) => {
   const { theme } = useTheme();
 
   return (
