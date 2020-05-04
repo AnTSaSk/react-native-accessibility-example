@@ -1,0 +1,2 @@
+[![AnTSaSk](https://circleci.com/gh/AnTSaSk/react-native-accessibility-example.svg?style=shield)]()
+[![codecov](https://codecov.io/gh/AnTSaSk/react-native-accessibility-example/branch/master/graph/badge.svg)](https://codecov.io/gh/AnTSaSk/react-native-accessibility-example)
