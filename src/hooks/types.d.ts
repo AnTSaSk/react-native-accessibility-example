@@ -2,7 +2,24 @@ export type accessibilitySize = 'default' | 'large';
 export type themeValue = 'light' | 'dark';
 
 export interface themeStyleProps {
-  colors: object;
+  colors: {
+    darkRed?: string;
+    red?: string;
+    lightRed?: string;
+    darkBlue?: string;
+    blue?: string;
+    lightBlue?: string;
+    grey?: string;
+    darkGrey?: string;
+    black?: string;
+    white?: string;
+    primary?: string;
+    secondary?: string;
+    background?: string;
+    card?: string;
+    text?: string;
+    border?: string;
+  };
   fonts?: object;
 }
 

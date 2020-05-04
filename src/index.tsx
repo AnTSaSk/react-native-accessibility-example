@@ -5,7 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 // Context
 import { useTheme } from './hooks/theme';
-import { lightColors, darkColors } from './hooks/variables';
+import { lightColors, darkColors } from './variables';
 
 // Drawer
 import CustomDrawer from './navigation/drawer';

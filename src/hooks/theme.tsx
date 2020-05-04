@@ -7,9 +7,9 @@ import React, {
   useState,
 } from 'react';
 import { Appearance } from 'react-native-appearance';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 
-import { lightColors, darkColors } from './variables';
+import { lightColors, darkColors } from '../variables';
 
 // Types
 import { themeValue, themeContextProps, themeStyleProps } from './types.d';
