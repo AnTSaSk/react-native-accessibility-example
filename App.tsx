@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
 
 // Context
@@ -8,7 +8,7 @@ import { ThemeProvider } from './src/hooks/theme';
 // Navigation
 import Navigation from './src';
 
-const App = () => {
+const App: FunctionComponent<{}> = () => {
   return (
     <AppearanceProvider>
       <AccessibilityProvider>
