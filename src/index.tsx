@@ -4,14 +4,14 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 // Context
-import { useTheme } from './hooks/theme';
+import { useTheme } from './hooks/Theme';
 import { lightColors, darkColors } from './variables';
 
 // Drawer
-import CustomDrawer from './navigation/drawer';
+import CustomDrawer from './navigation/Drawer';
 
 // Screens
-import Home from './routes/home';
+import Home from './routes/Home';
 
 const Drawer = createDrawerNavigator();
 

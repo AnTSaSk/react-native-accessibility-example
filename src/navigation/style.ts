@@ -7,6 +7,10 @@ import { ThemeViewProps } from './types.d';
 // Components
 import Paragraph from '../components/Paragraph';
 
+export const DrawerHeader = styled.View`
+  padding: 0 15px;
+`;
+
 export const DrawerFooter = styled.View`
   padding: 0 15px;
 `;

@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 
-import { accessibilitySize, accessibilityContextProps } from './types.d';
+import { accessibilitySize, accessibilityContextProps } from './types';
 
 export const AccessibilityContext = createContext<accessibilityContextProps>({
   size: 'default',

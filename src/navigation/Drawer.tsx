@@ -7,11 +7,12 @@ import {
 } from '@react-navigation/drawer';
 
 // Context
-import { useTheme } from '../hooks/theme';
-import { useAccessibility } from '../hooks/accessibility';
+import { useTheme } from '../hooks/Theme';
+import { useAccessibility } from '../hooks/Accessibility';
 
 // Styles
 import {
+  DrawerHeader,
   DrawerFooter,
   ThemeTitle,
   ThemeWrapper,
@@ -27,7 +28,13 @@ const Drawer: FunctionComponent<DrawerContentComponentProps> = (props) => {
   const { contrast, changeContrast } = useAccessibility();
   const isDark = theme === 'dark';
 
-  const themeSection = () => (
+  const SizeSection: FunctionComponent<{}> = () => (
+    <View>
+      <ThemeTitle isDark={isDark}>Change size :</ThemeTitle>
+    </View>
+  );
+
+  const ThemeSection: FunctionComponent<{}> = () => (
     <View>
       <ThemeTitle isDark={isDark}>Theme :</ThemeTitle>
       <ThemeWrapper>
@@ -49,11 +56,16 @@ const Drawer: FunctionComponent<DrawerContentComponentProps> = (props) => {
 
   return (
     <>
-      <DrawerContentScrollView {...props}>
-        <DrawerItemList {...props} />
-      </DrawerContentScrollView>
+      <DrawerHeader>
+        <SizeSection />
+        <DrawerContentScrollView {...props}>
+          <DrawerItemList {...props} />
+        </DrawerContentScrollView>
+      </DrawerHeader>
       <SafeAreaView>
-        <DrawerFooter>{themeSection()}</DrawerFooter>
+        <DrawerFooter>
+          <ThemeSection />
+        </DrawerFooter>
       </SafeAreaView>
     </>
   );

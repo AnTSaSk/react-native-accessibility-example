@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
 // Context
-import { useTheme } from '../../hooks/theme';
+import { useTheme } from '../../hooks/Theme';
 
 // Types
 import { ParagraphProps } from './types';

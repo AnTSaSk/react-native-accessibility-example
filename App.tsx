@@ -2,8 +2,8 @@ import React, { FunctionComponent } from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
 
 // Context
-import { AccessibilityProvider } from './src/hooks/accessibility';
-import { ThemeProvider } from './src/hooks/theme';
+import { AccessibilityProvider } from './src/hooks/Accessibility';
+import { ThemeProvider } from './src/hooks/Theme';
 
 // Navigation
 import Navigation from './src';
