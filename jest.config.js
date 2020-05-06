@@ -16,6 +16,12 @@ module.exports = {
   // from the above linked tutorial's config:
   cacheDirectory: '.jest/cache',
   collectCoverage: true,
+  collectCoverageFrom: [
+    "<rootDir>/src/components/**/*.tsx",
+    "<rootDir>/src/navigation/*.tsx",
+    "<rootDir>/src/routes/*.tsx",
+    "!<rootDir>/src/hooks/**",
+  ],
   coverageDirectory: './coverage',
   snapshotSerializers: ['@emotion/jest'],
   testEnvironment: 'jsdom',

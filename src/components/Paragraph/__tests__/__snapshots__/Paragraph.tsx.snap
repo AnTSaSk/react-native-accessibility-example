@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders correctly Paragraph component 1`] = `
+exports[`Component - Paragraph Renders correctly component 1`] = `
 <View
   style={
     Object {
