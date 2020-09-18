@@ -1620,10 +1620,10 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
-"@types/react-native@0.62.5":
-  version "0.62.5"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.62.5.tgz#605c2d31485c515ee18b62e8b29ffdbba404a443"
-  integrity sha512-x6ZBbo752yAw5XUarOyh53oNgMuafL4EhWEbd4ARSMK6Y7nTRm2a1tBHy8Fp7h7ji0XXJrxNRTXGJRRP3+MWzg==
+"@types/react-native@0.62.6":
+  version "0.62.6"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.62.6.tgz#1c23c56b21d967d6d783a0e50dfa00256fefedbc"
+  integrity sha512-Zl/Qd9otSJ8DNOGdEgR62un6NQPUdFsBnUAjceK7yLEeZZ+rBmb9/PVpam4pfNTWf1o6AQNI1pSDmYJ3pgw0tA==
   dependencies:
     "@types/react" "*"
 
@@ -6334,9 +6334,9 @@ lodash.throttle@^4.1.1:
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.3.0, lodash@~4.17.12:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-symbols@^2.2.0:
   version "2.2.0"
